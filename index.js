@@ -67,7 +67,7 @@ function play() {
   isPlaying = true;
   song = songs[Math.floor(Math.random() * songs.length)];
   let fakes = fakeSongs.sort(() => 0.5 - Math.random()).slice(0, 2);
-  audio = new Audio("/songs/" + song + ".mp3");
+  audio = new Audio("./songs/" + song + ".mp3");
   audio.play();
 
   choices = [song, ...fakes].sort(() => 0.5 - Math.random());
@@ -112,11 +112,12 @@ function showChoices() {
 function updateScore() {
   document.getElementById("scoreNumber").textContent = score;
 }
-function showImg() {console.log("Showing Image");
-document.body.style.backgroundImage = 'url("/photos/' + song + '.jpg")';
-document.body.style.backgroundRepeat = "no-repeat";
-// document.body.style.backgroundSize = "cover";
+function showImg() {
+  console.log("Showing Image");
+  document.body.style.backgroundImage = 'url("./photos/' + song + '.jpg")';
+  document.body.style.backgroundRepeat = "no-repeat";
+  // document.body.style.backgroundSize = "cover";
 }
-function hideImg() {                             
+function hideImg() {
   document.body.style.background = "";
 }
